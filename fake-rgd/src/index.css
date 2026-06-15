@@ -1,0 +1,351 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+/* ------------------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  background: #ececec;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.screen {
+  width: 375px;
+  background: #ffffff;
+  min-height: 700px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  background: linear-gradient(180deg, #ee3f35 0%, #e1352b 100%);
+  color: #fff;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header .back-arrow {
+  position: absolute;
+  left: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.header .title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: #f5f5f5;
+  padding: 10px 12px;
+  gap: 8px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 9px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #2b2b2b;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Order info */
+.order-info {
+  padding: 12px 16px 14px;
+  border-bottom: 8px solid #f5f5f5;
+}
+
+.order-info .order-number {
+  font-size: 14px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.order-info .order-status {
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+/* Route card */
+.route-card {
+  position: relative;
+  height: 110px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.route-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(120deg, #2e3a4d 0%, #3c4a5e 45%, #5b6b7e 100%);
+}
+
+.route-card .route-bg-fade {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  background: linear-gradient(
+    90deg,
+    rgba(46, 58, 77, 0) 0%,
+    rgba(46, 58, 77, 0.55) 100%
+  );
+}
+
+.route-card .route-text {
+  position: relative;
+  z-index: 2;
+  padding-left: 24px;
+  color: #fff;
+}
+
+.route-card .city {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.route-card .arrow-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+  margin-bottom: 4px;
+}
+
+.route-card .heart {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 3;
+  width: 22px;
+  height: 22px;
+  color: #fff;
+}
+
+/* Details section */
+.details {
+  padding: 16px 16px 0;
+}
+
+.train-info {
+  font-size: 12px;
+  color: #8a8a8a;
+  margin-bottom: 14px;
+}
+
+.date {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 18px;
+}
+
+.field-label {
+  font-size: 11px;
+  color: #ababab;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.field-value {
+  font-size: 15px;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.field-value.bold {
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.barcode-label {
+  margin-top: 4px;
+}
+
+.barcode-value {
+  font-size: 15px;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+}
+
+/* Barcode */
+.barcode {
+  width: 100%;
+  height: 90px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: stretch;
+}
+
+.barcode svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.fullscreen-link {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2db67c;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding-bottom: 18px;
+  border-bottom: 8px solid #f5f5f5;
+}
+
+/* Passenger */
+.passenger-section {
+  padding: 16px 16px 16px;
+}
+
+.passenger-label {
+  font-size: 11px;
+  color: #ababab;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
